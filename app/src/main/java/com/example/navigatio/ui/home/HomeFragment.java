@@ -31,30 +31,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private PersonaLab mPersonaLab;
     private Persona mPersona;
     private TextView guardar;
-    private Button bguardar,blimpiar;
+    private Button bguardar,blimpiar,beliminar;
+    private EditText editText,text;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
         mPersonaLab=new PersonaLab(getContext());
-        bguardar.setOnClickListener(this);
-        blimpiar.setOnClickListener(this);
-
-        getAllPersonas();
-        listItemAdapter=new com.example.navigatio.adapter.ListAdapter(getContext(),listaNombres);
-        listView.setAdapter(listItemAdapter);
-
-
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        //final TextView textView = root.findViewById(R.id.text_home);
         guardar = root.findViewById(R.id.editTextTextPersonName);
         listView = root.findViewById(R.id.list);
         bguardar = root.findViewById(R.id.buttonGuardar);
         blimpiar = root.findViewById(R.id.buttonLimpiar);
+        beliminar  = root.findViewById(R.id.buttonEliminar);
+
+
+
+
+
+        getAllPersonas();
+        listItemAdapter=new com.example.navigatio.adapter.ListAdapter(getContext(),listaNombres);
+        listView.setAdapter(listItemAdapter);
+        bguardar.setOnClickListener(this);
+        blimpiar.setOnClickListener(this);
+        beliminar.setOnClickListener(this);
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -82,18 +86,38 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         listaNombres.addAll(mPersonaLab.getPersonas());
 
     }
+    public void eliminar(){
+       mPersona.getNombre();
+       if (guardar.getText().equals( mPersona.getNombre())){
+           mPersonaLab.deleteAllPersona();
+           listaNombres.clear();
+
+
+       }
+
+            }
+
 
     // ACCION DE LOS BOTONES
     @Override
     public void onClick(View v) {
         if (v==blimpiar){
+
             mPersonaLab.deleteAllPersona();
             listaNombres.clear();
+
 
         }
         if (v==bguardar){
             insertPersonas();
             getAllPersonas();
+
+
+
+        }
+        if (v==beliminar){
+            get.p
+
 
         }
     }

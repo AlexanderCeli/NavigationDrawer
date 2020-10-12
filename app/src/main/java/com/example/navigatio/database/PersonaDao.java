@@ -35,4 +35,8 @@ public interface PersonaDao {
     @Query("DELETE FROM persona")
     void deleteAllPersona();
 
+    @Query("SELECT * FROM persona WHERE nombre LIKE :search " )
+    public List<Persona> findUserWithName(String search);
+
+
 }

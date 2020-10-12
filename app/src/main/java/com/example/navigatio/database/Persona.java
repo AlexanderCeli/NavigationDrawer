@@ -1,5 +1,4 @@
 package com.example.navigatio.database;
-
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -37,6 +36,9 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
+
 
 
 

@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.example.navigatio.R;
 import com.example.navigatio.database.Persona;
 
@@ -56,14 +57,6 @@ public  class ListAdapter extends ArrayAdapter<Persona> {
         }
 
         viewHolder.vItemName.setText(list.get(position).getNombre());
-
-        //Glide.with(context).load("http://i.imgur.com/DvpvklR.png")
-          //      .into(viewHolder.vItemImage);
-        // Picasso.get().load("http://i.imgur.com/DvpvklR.png").resize(50, 50)
-        //  .centerCrop().into(viewHolder.vItemImage);
-
-
-
 
 
 

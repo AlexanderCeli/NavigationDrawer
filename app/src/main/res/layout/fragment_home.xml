@@ -36,6 +36,14 @@
             android:text="Limpiar"
             />
 
+        <Button
+            android:id="@+id/buttonEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Eliminar"
+             />
+
     </LinearLayout>
 
     <ListView

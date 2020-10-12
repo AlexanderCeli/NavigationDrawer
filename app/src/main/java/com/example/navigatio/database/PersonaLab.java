@@ -48,10 +48,10 @@ public class PersonaLab {
         mPersonaDao.updatePersona(persona);
     }
 
-    public void deletePersona(Persona persona) {
-        mPersonaDao.deletePersona(persona);
-    }
+    public void deletePersona(Persona persona) {mPersonaDao.deletePersona(persona); }
     public void deleteAllPersona() {
         mPersonaDao.deleteAllPersona();
     }
+
+
 }
